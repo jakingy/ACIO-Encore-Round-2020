@@ -1,0 +1,5 @@
+- random
+- max
+- min
+- 1 column
+- vary density of potatoes and teleporters
