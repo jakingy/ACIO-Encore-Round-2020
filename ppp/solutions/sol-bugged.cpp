@@ -80,6 +80,7 @@ int main() {
     for(int i = 0; i < Q; ++i){
         // need to break on sub 4 without || (es[eptr].r == qs[i].r && es[eptr].tp == 0))) (done)
         //while (eptr < es.size() && es[eptr].r <= qs[i].r) { breaks on all subtasks
+        //while (eptr < es.size() && ((es[eptr].r < qs[i].r))) {
         while (eptr < es.size() && ((es[eptr].r < qs[i].r) || (es[eptr].r == qs[i].r && es[eptr].tp == 0))) {
             resolve_event(es[eptr]);
             eptr++;

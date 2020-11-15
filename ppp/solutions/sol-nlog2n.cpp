@@ -5,7 +5,7 @@ using namespace std;
 #define MAXN (1<<MAXH)
 #define MAXQ MAXN
 
-int H, Q, X, cnt[MAXN][MAXH]; 
+int H, Q, X, cnt[MAXN][MAXH], join[MAXN]; 
 long double a[MAXN], b[MAXN], R, ans[MAXQ];
 
 struct ev {
@@ -19,7 +19,7 @@ bool operator < (ev a, ev b) {
         return a.r < b.r;
     }
     if (a.tp != b.tp) {
-        return a.tp > b.tp;
+        return a.tp < b.tp;
     }
     return a.x < b.x;
 }
@@ -43,11 +43,18 @@ int depth(int x){
 }
 
 void resolve_event(ev e) {
-    int x = e.x, d = depth(e.x);
-    while(x) {
+    join[e.x] = 1-e.tp;
+    int x = e.x;
+    do {
         x = par(x);
-        cnt[x][d] += e.tp; 
-    }
+        for (int i = 0; i < H; ++i){
+            if (e.tp) {
+                cnt[x][i] -= cnt[e.x][i];
+            }else {
+                cnt[x][i] += cnt[e.x][i];
+            }
+        }       
+    } while(join[x]);
 }
 
 int main() {
@@ -55,15 +62,10 @@ int main() {
     cin.tie(0);
     cin >> H;
     vector<ev> es;
-    b[0] = 1;
     for(int i = 1; i < (1<<H)-1; ++i) {
         cin>>a[i]>>b[i];
-        a[i] = max(a[i], a[par(i)]);
-        b[i] = min(b[i], b[par(i)]);
-        if (a[i] <= b[i]) {
-            es.push_back({a[i], 1, i});
-            es.push_back({b[i], -1, i});
-        }
+        es.push_back({a[i], 0, i});
+        es.push_back({b[i], 1, i});
         cnt[i][depth(i)]++;
     }
     sort(es.begin(), es.end());
@@ -75,8 +77,8 @@ int main() {
     }
     sort(qs.begin(), qs.end());
     int eptr = 0;
-    for(int i = 0; i < Q; ++i) {
-        while (eptr < es.size() && ((es[eptr].r < qs[i].r) || (es[eptr].r == qs[i].r && es[eptr].tp == 1))) {
+    for(int i = 0; i < Q; ++i){
+        while (eptr < es.size() && ((es[eptr].r < qs[i].r) || (es[eptr].r == qs[i].r && es[eptr].tp == 0))) {
             resolve_event(es[eptr]);
             eptr++;
         }
@@ -86,6 +88,20 @@ int main() {
             ans[qs[i].id] += p * cnt[qs[i].x][d];
             p *= qs[i].r;
         }
+        
+        //make sure breaking case for this
+        //check if broken line
+        for(int j = qs[i].x; j > 0; j = par(j)) {
+            if (!join[j]) ans[qs[i].id] = 0;
+        }
+        
+        //make sure breaking case for this
+        /* this is a bug
+        while (eptr < es.size() && es[eptr].r == qs[i].r) {
+            resolve_event(es[eptr]);
+            eptr++;
+        }
+        */
     }
 
     cout << fixed << setprecision(8);
