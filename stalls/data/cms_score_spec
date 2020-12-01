@@ -1,0 +1,28 @@
+[
+  [
+    15,
+    "^(sample2|all-doubles-sub1|2-nopower|chain-end-sub1|chain-break-sub1|no-power-sub1|chain-random-sub1|2-zeroes|2-usepower|large-M=3-sub1|large-M=958711-sub1|C=0-sub1|chain-start-sub1|large-M=64000-sub1|max-sub1|2-impossible|large-M=720-sub1)$",
+    "Subtask 1"
+  ],
+  [
+    17,
+    "^(sample2|sample3|2-nopower|C=0-sub2|seed-821887523-sub2|valid-4-sub2|seed-319189562-sub2|valid-2-sub2|valid-1-sub2|seed-284964593-sub2|valid-3-sub2|seed-485620735-sub2|seed-229560240-sub2|seed-53863356-sub2|2-zeroes|2-usepower|seed-657163014-sub2|min|seed-589697416-sub2|sample1|random-break|valid-6-sub2|valid-5-sub2|no-connection-sub1|2-impossible|seed-347480376-sub2)$",
+    "Subtask 2"
+  ],
+  [
+    24,
+    "^(bipartite-islands-sub3|sample2|random-non-bipartite-sub3|2-nopower|even-cycle-sub3|random-bipartite-sub3|2-usepower|tree-sub3|odd-cycle-sub3|single-conflict-non-bipartite-sub3|single-non-bipartite-island-sub3|no-connections-sub3|complete-bipartite-sub3)$",
+    "Subtask 3"
+  ],
+  [
+    29,
+    "^(valid-tree-100k-sub4|sample3|broke-line-sub4|2-nopower|broke-tree-sub4|valid-line-sub4|seed-284964593-sub2|seed-229560240-sub2|2-zeroes|2-usepower|tree-sub3|random-line-sub4|C=0-valid-tree-sub4|random-break|valid-tree-sub4|2-impossible|random-tree-sub4)$",
+    "Subtask 4"
+  ],
+  [
+    15,
+    "^(valid-tree-100k-sub4|bipartite-islands-sub3|sample2|all-doubles-sub1|sample3|broke-line-sub4|random-non-bipartite-sub3|2-nopower|even-cycle-sub3|max-broke-sub5|random-bipartite-sub3|chain-end-sub1|C=0-sub2|broke-tree-sub4|dense-broke-sub5|seed-821887523-sub2|valid-4-sub2|seed-319189562-sub2|valid-line-sub4|valid-2-sub2|valid-1-sub2|chain-break-sub1|seed-284964593-sub2|no-power-sub1|valid-3-sub2|seed-485620735-sub2|seed-229560240-sub2|seed-53863356-sub2|chain-random-sub1|2-zeroes|2-usepower|seed-657163014-sub2|min|tree-sub3|large-M=3-sub1|random-line-sub4|C=0-valid-tree-sub4|odd-cycle-sub3|single-conflict-non-bipartite-sub3|large-M=958711-sub1|C=0-sub1|single-non-bipartite-island-sub3|chain-start-sub1|seed-589697416-sub2|sample1|max-valid-sub5|max-random-sub5|random-break|valid-islands-sub5|no-connections-sub3|valid-6-sub2|large-M=64000-sub1|valid-5-sub2|max-sub1|max-C=0-sub5|single-broke-island-sub5|complete-bipartite-sub3|no-connection-sub1|valid-tree-sub4|2-impossible|seed-347480376-sub2|large-M=720-sub1|random-tree-sub4|dense-valid-sub5)$",
+    "Subtask 5"
+  ]
+]
+

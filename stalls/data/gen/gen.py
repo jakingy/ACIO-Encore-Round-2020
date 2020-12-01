@@ -759,7 +759,7 @@ def sub4():
     C = max(MINC,int(2**(random.random()*log2(MAXC))))
     edges = tree_to_edges(treegen.mixed_tree(S, 4))
     ps = smart_ps(S, M, C, edges, True)
-    write_case("valid-tree", 4, S, R, M, C, ps, edges)
+    write_case("valid-tree-100k", 4, S, R, M, C, ps, edges)
 
     # C=0
     S = 100000
@@ -895,7 +895,7 @@ def sub5():
     merge_edges(edges, S, broke_edges, s)
     S += s
     R = len(edges)
-    write_case("singl-broke-island", 5, S, R, M, C, ps, edges)
+    write_case("single-broke-island", 5, S, R, M, C, ps, edges)
 
     #dense valid
     S = 5000
